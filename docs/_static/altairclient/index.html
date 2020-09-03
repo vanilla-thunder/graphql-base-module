@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Altair</title>
+  <base href="">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A beautiful feature-rich GraphQL Client IDE for all platforms. Available for MacOS, Windows, Linux, Chrome, Firefox. Enables you interact with any GraphQL server you are authorized to access from any platform you are on. Much like Postman for GraphQL, you can easily test and optimize your GraphQL implementations. You also have several features to make your GraphQL development process much easier including subscriptions, query scaffolding, formatting, multiple languages, themes, and many more.">
+<link rel="stylesheet" href="css/styles.726a0799067b7b92f989.css"></head>
+<body>
+
+  <app-root>
+    <style>
+      .loading-screen{
+        /*Prevents the loading screen from showing until CSS is downloaded*/
+        display: none;
+      }
+    </style>
+    <div class="loading-screen styled">
+      <div class="loading-screen-inner">
+        <div class="loading-screen-logo-container">
+          <img src="logo_350.svg" alt="Altair">
+        </div>
+        <div class="loading-screen-loading-indicator">
+          <span class="loading-indicator-dot"></span>
+          <span class="loading-indicator-dot"></span>
+          <span class="loading-indicator-dot"></span>
+        </div>
+      </div>
+    </div>
+  </app-root>
+  <script>
+    // Angular appends the app script to the bottom.
+    // This ensures the code is run after the assets have been added.
+    document.addEventListener('DOMContentLoaded', () => {
+      AltairGraphQL.init();
+    });
+  </script>
+  <script src="js/runtime.b2461c08e3fdfba13eec.js" defer></script>
+  <script src="js/polyfills-es5.4c837c4d0ea483fc6b73.js" nomodule defer></script>
+  <script src="js/polyfills.44a0377c435527cfd3ee.js" defer></script>
+  <script src="js/main.1c44751befe279ead5d8.js" defer></script>
+</body>
+</html>

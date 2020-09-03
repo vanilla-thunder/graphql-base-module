@@ -26,6 +26,7 @@ Table of contents
         development
         specification
         troubleshooting
+        playground
 
 GraphQL?!?
 ----------
