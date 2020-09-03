@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - send `Access-Control-Allow-Origin: *` response header with every response
+- Altair client playground section in documentation.
 
 ### Changed
 
