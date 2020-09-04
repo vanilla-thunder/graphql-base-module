@@ -9,7 +9,16 @@ Here's the playground to test out queries. You can use the OXID GraphQL Demoshop
 
 or any other suitable graphql endpoint.
 
+
 .. raw:: html
 
-    <iframe src="_static/altairclient/index.html" height="1000px" width="100%"></iframe>
+    <script type="text/javascript">
+    <!--
+    window.onload = function ()
+    {
+        document.getElementsByClassName('wy-nav-content')[0].style.setProperty("max-width", "100%");
+    }
+    //-->
+    </script>
+    <iframe src="_static/altairclient/index.html" height="1000px" width="100%" ></iframe>
 
