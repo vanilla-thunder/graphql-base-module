@@ -34,7 +34,11 @@
     // Angular appends the app script to the bottom.
     // This ensures the code is run after the assets have been added.
     document.addEventListener('DOMContentLoaded', () => {
-      AltairGraphQL.init();
+        AltairGraphQL.init({
+            endpointURL: 'http://www.oxideshop.local/graphql',
+            initialVariables: '{username: "user@oxid-esales.com", password: "useruser"}',
+            initialQuery: 'query{token(username: "user@oxid-esales.com", password: "useruser")}'
+        });
     });
   </script>
   <script src="js/runtime.b2461c08e3fdfba13eec.js" defer></script>
