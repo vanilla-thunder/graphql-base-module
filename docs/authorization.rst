@@ -21,10 +21,12 @@ to be used in future requests.
 
     query {
         token (
-            username: "admin",
-            password: "admin"
+            username: "user@oxid-esales.com",
+            password: "useruser"
         )
     }
+
+Try out the query in our `Playground <playground.html?query=query{token (username: "user@oxid-esales.com",password: "useruser")}>`_.
 
 **Response:**
 

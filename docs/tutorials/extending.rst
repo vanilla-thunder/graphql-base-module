@@ -20,6 +20,9 @@ information about the manufacturer assigned to a product.
         }
     }
 
+Try out the query in our `Playground <../playground.html?query=query{product(id:"dc5ffdf380e15674b56dd562a7cb6aec"){%0Atitle%0Amanufacturer{%0Aid%0Atitle}%0A}%0A}>`_.
+
+
 **Response**
 
 .. code-block:: json

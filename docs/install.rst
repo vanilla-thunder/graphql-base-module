@@ -41,3 +41,9 @@ Now you need to activate the modules, either via OXID eShop admin or CLI.
 
 .. important::
     Keep in mind that you have to activate the **GraphQL Base** module first.
+
+Playground
+----------
+
+Once your shop is up and running, you can try out queries in this documentation's
+`Playground <playground.html>`_ section.

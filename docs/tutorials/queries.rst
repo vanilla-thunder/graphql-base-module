@@ -19,6 +19,8 @@ section we will implement the query for getting the product title like so.
         }
     }
 
+Try out the query in our `Playground <../playground.html?query=query{product(id: "dc5ffdf380e15674b56dd562a7cb6aec"){title}}>`_.
+
 **Response**
 
 .. code-block:: json

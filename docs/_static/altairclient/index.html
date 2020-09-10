@@ -37,6 +37,7 @@
         AltairGraphQL.init({
             endpointURL: window.frameElement.getAttribute("graphql-url"),
             initialQuery: window.frameElement.getAttribute("initial-query"),
+            instanceStorageNamespace: 'altair_' + Date.now()
         });
     });
   </script>
