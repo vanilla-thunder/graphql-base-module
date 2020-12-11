@@ -19,3 +19,10 @@ settings:
 extensions:
   enabled:
     - Codeception\Extension\RunFailed
+
+coverage:
+  enabled: true
+  remote: false
+  local: true
+  include:
+    - ./*
