@@ -52,7 +52,7 @@ if (!function_exists('__c3_error')) {
         setcookie('CODECEPTION_CODECOVERAGE_ERROR', $message);
     }
 }
-
+require_once '/var/www/oxideshop/vendor/codeception/codeception/autoload.php';
 // Autoload Codeception classes
 if (!class_exists('\\Codeception\\Codecept')) {
     if (file_exists(__DIR__ . '/codecept.phar')) {
@@ -93,8 +93,6 @@ $configFile = realpath(__DIR__) . DIRECTORY_SEPARATOR . 'codeception.yml';
 if (isset($_SERVER['HTTP_X_CODECEPTION_CODECOVERAGE_CONFIG'])) {
     $configFile = realpath(__DIR__) . DIRECTORY_SEPARATOR . $_SERVER['HTTP_X_CODECEPTION_CODECOVERAGE_CONFIG'];
 }
-var_dump($configFile);
-die($configFile);
 if (file_exists($configFile)) {
     // Use codeception.yml for configuration.
 } elseif (file_exists($configDistFile)) {
