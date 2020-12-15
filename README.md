@@ -89,15 +89,29 @@ How to extend GraphQL module types and implement your new mutations and queries 
 $ composer test
 ```
 
-### Integration/Acceptance tests
+### Codeception tests
 
-- install this module into a running OXID eShop
-- change the `test_config.yml`
-  - add `oe/graphql-base` to the `partial_module_paths`
-  - set `activate_all_modules` to `true`
+Install this module into a running OXID eShop.
 
 ```bash
-$ ./vendor/bin/runtests
+$ composer require codeception/module-rest codeception/module-phpbrowser --dev
+$ ./vendor/bin/codecept -c source/modules/oe/graphql-base/tests/ run
+```
+
+#### Code coverage
+
+For remote code coverage report to work you need to install `c3.php` and require
+it in the eShops `bootstrap.php` file, either manually or via
+
+```bash
+$ sed -i 's/<?php/<?php\n\nrequire(__DIR__ . "\/..\/c3.php");/' source/bootstrap.php
+$ composer require codeception/c3 --dev
+```
+
+Afterwards you may run codeception with additional `--coverage` argument:
+
+```bash
+$ ./vendor/bin/codecept -c source/modules/oe/graphql-base/tests/ run --coverage --coverage-html
 ```
 
 ## Issues
