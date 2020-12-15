@@ -24,6 +24,7 @@ coverage:
   enabled: true
   remote: true
   local: true
-  c3_url: '%SHOP_URL%/index.php/'
+  c3_url: '%SHOP_URL%'
+  remote_config: 'source/modules/oe/graphql-base/tests/codeception.yml'
   include:
-    - ../src/*
+      - ../src/*

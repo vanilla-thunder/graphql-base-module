@@ -23,6 +23,3 @@ modules:
     - \OxidEsales\GraphQL\Base\Tests\Codeception\Module\AcceptanceHelper:
         depends:
             - REST
-coverage:
-  enabled: true
-  remote: true
