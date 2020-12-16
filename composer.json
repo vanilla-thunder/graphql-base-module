@@ -18,8 +18,7 @@
         "ext-json": "*",
         "thecodingmachine/graphqlite": "^3.1.2",
         "lcobucci/jwt": "^3.4.1",
-        "symfony/cache": "^4.3.0",
-        "codeception/c3": "2.*"
+        "symfony/cache": "^4.3.0"
     },
     "require-dev": {
         "phpunit/phpunit": "^7.5.20|^8.5|^9",
