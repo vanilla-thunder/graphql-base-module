@@ -42,17 +42,17 @@ after_success:
     - sudo chmod +775 coverage.sh
     - ./coverage.sh
 
-#before_deploy:
-#    - sudo chmod +775 deploy.sh
-#    - ./deploy.sh
-#
-#deploy:
-#    provider: pages
-#    skip_cleanup: true
-#    github_token: $GITHUB_TOKEN
-#    keep_history: true
-#    local_dir: ./docs/_static/schema
-#    target_branch: schema
-#    on:
-#        branch: master
-#        condition: $TRAVIS_PHP_VERSION = "7.4" && $DEPENDENCIES = ""
+before_deploy:
+   - sudo chmod +775 deploy.sh
+   - ./deploy.sh
+
+deploy:
+   provider: pages
+   skip_cleanup: true
+   github_token: $GITHUB_TOKEN
+   keep_history: true
+   local_dir: ./docs/_static/schema
+   target_branch: schema
+   on:
+       branch: master
+       condition: $TRAVIS_PHP_VERSION = "7.4" && $DEPENDENCIES = ""

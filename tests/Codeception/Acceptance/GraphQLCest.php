@@ -14,6 +14,14 @@ use OxidEsales\GraphQL\Base\Tests\Codeception\AcceptanceTester;
 
 class GraphQLCest
 {
+    public function testOpenShop(AcceptanceTester $I): void
+    {
+        // $I->amOnPage('http://oxideshop.local');
+        $I->amOnPage('http://localhost:8080');
+        $I->see("Week's Special", 'h2');
+        // $I->see("Angebote der Woche", 'h2');
+    }
+
     public function testLoginWithInvalidCredentials(AcceptanceTester $I): void
     {
         $I->sendGQLQuery('query {token(username:"wrong", password:"wrong")}');
