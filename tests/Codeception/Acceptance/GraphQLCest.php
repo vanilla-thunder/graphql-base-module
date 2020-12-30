@@ -16,8 +16,7 @@ class GraphQLCest
 {
     public function testOpenShop(AcceptanceTester $I): void
     {
-        // $I->amOnPage('http://oxideshop.local');
-        $I->amOnPage('http://localhost:8080');
+        $I->amOnPage('/');
         $I->see("Week's Special", 'h2');
         // $I->see("Angebote der Woche", 'h2');
     }

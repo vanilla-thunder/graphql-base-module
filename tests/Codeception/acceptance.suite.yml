@@ -6,11 +6,11 @@ modules:
     - Asserts
     - \OxidEsales\GraphQL\Base\Tests\Codeception\Helper\Acceptance
     - REST:
-        url: 'http://127.0.0.1:8080'
+        url: '%SHOP_URL%'
         depends: PhpBrowser
         part: Json
     - PhpBrowser:
-          url: 'http://127.0.0.1:8080'
+          url: '%SHOP_URL%'
           cookies:
               cookie-1:
                   Name: XDEBUG_SESSION_START
