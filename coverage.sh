@@ -53,7 +53,6 @@ vendor/bin/reset-shop
 composer clearcache
 composer update
 
-php -S 127.0.0.1:8080 -t ./ &
 sudo service mysql restart
 
 echo '---------install config---------'
