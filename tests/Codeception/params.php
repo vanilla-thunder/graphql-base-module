@@ -11,9 +11,6 @@ use OxidEsales\Facts\Facts;
 
 $facts = new Facts();
 
-echo 'SHOP_URL';
-echo $facts->getShopUrl();
-
 return [
     'SHOP_URL' => $facts->getShopUrl(),
 ];

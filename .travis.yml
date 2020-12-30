@@ -25,6 +25,9 @@ env:
   global:
     - DEFAULT_COMPOSER_FLAGS="--no-interaction --no-ansi --no-progress --no-suggest --prefer-dist"
 
+before_script:
+    - nohup bash -c "php -S 127.0.0.1:8080 2>&1 -t app &" && sleep 1; cat nohup.out
+
 before_install:
     - composer self-update --1
 
@@ -32,15 +35,13 @@ install:
     - travis_retry composer update $DEFAULT_COMPOSER_FLAGS $DEPENDENCIES
 
 script:
-    - composer test:syntax
+#    - composer test:syntax
+    - sudo chmod +775 coverage.sh
+    - ./coverage.sh
 #    - composer test:lint
 #    - composer test:unit
 #    - composer test:infection
 #    - if [ $(php -r "echo PHP_MAJOR_VERSION . PHP_MINOR_VERSION;") == "74" -a "$DEPENDENCIES" == "" ]; then composer test:static; fi;
-
-after_success:
-    - sudo chmod +775 coverage.sh
-    - ./coverage.sh
 
 before_deploy:
    - sudo chmod +775 deploy.sh
