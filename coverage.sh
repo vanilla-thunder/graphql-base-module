@@ -30,11 +30,11 @@ mkdir -p var/configuration
 
 # prepare configuration
 
-sed -i 's|<dbHost>|localhost|' source/config.inc.php
+sed -i 's|<dbHost>|127.0.0.1|' source/config.inc.php
 sed -i 's|<dbName>|oxideshop|' source/config.inc.php
 sed -i 's|<dbUser>|root|' source/config.inc.php
 sed -i 's|<dbPwd>||' source/config.inc.php
-sed -i 's|<sShopURL>|http://localhost:8080|' source/config.inc.php
+sed -i 's|<sShopURL>|http://127.0.0.1:8080|' source/config.inc.php
 sed -i "s|'<sShopDir>'|__DIR__|" source/config.inc.php
 sed -i "s|'<sCompileDir>'|__DIR__ . '/tmp'|" source/config.inc.php
 sed -i "s|blSkipViewUsage = false|blSkipViewUsage = true|" source/config.inc.php
@@ -44,7 +44,7 @@ sudo sed -e 's|utf8_unicode_ci|latin1_general_ci|g; s|utf8|latin1|g' --in-place 
 sudo service mysql restart
 
 # start php built-in webserver
-php -S localhost:8080 &
+php -S 127.0.0.1:8080 &
 
 # wait for it ;-)
 sleep 2;
@@ -53,7 +53,7 @@ vendor/bin/reset-shop
 composer clearcache
 composer update
 
-php -S localhost:8080 &
+php -S 127.0.0.1:8080 &
 sudo service mysql restart
 
 echo '---------install config---------'
