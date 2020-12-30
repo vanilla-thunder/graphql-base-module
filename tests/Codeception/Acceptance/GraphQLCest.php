@@ -17,8 +17,7 @@ class GraphQLCest
     public function testOpenShop(AcceptanceTester $I): void
     {
         $I->amOnPage('/');
-        $I->see("Week's Special", 'h2');
-        // $I->see("Angebote der Woche", 'h2');
+        $I->see("Angebote der Woche", 'h2');
     }
 
     public function testLoginWithInvalidCredentials(AcceptanceTester $I): void

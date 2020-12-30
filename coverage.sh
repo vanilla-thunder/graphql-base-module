@@ -14,6 +14,7 @@ composer require codeception/module-phpbrowser codeception/c3 --dev
 #sed -i 's/<?php/<?php\n\nrequire(__DIR__ . "\/..\/c3.php");/' source/bootstrap.php
 
 cp ./source/config.inc.php.dist ./source/config.inc.php
+chmod 0777 ./source/log
 
 composer require codeception/module-rest --dev
 composer require codeception/module-phpbrowser --dev
