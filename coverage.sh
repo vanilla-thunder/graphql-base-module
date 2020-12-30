@@ -44,7 +44,7 @@ sudo sed -e 's|utf8_unicode_ci|latin1_general_ci|g; s|utf8|latin1|g' --in-place 
 sudo service mysql restart
 
 # start php built-in webserver
-php -S 127.0.0.1:8080 &
+php -S 127.0.0.1:8080 -t ./ &
 
 # wait for it ;-)
 sleep 2;
@@ -53,7 +53,7 @@ vendor/bin/reset-shop
 composer clearcache
 composer update
 
-php -S 127.0.0.1:8080 &
+php -S 127.0.0.1:8080 -t ./ &
 sudo service mysql restart
 
 echo '---------install config---------'
