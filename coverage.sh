@@ -64,8 +64,9 @@ echo '---------end install config---------'
 sudo chmod +775 c3.php
 
 # Try to run tests and then coverage
-vendor/bin/codecept -c source/modules/oe/graphql-base/tests/ run
+# vendor/bin/codecept -c source/modules/oe/graphql-base/tests/ run
 # vendor/bin/codecept -c source/modules/oe/graphql-base/tests/ run --coverage --coverage-html
+vendor/bin/runtests-codeception
 
 echo '---- output of more ----'
 more /home/travis/build/OXID-eSales/shop-graphql/source/modules/oe/graphql-base/tests/Codeception/_output/OxidEsales.GraphQL.Base.Tests.Codeception.Acceptance.GraphQLCest.testOpenShop.fail.html
