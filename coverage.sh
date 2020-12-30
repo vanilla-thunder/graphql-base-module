@@ -1,11 +1,7 @@
 #!/bin/bash
 
-# Full installation of the shop
-#composer update $DEFAULT_COMPOSER_FLAGS # TODO: This won't be needed on Travis. It is used for local testing.
-
 mkdir ../shop-graphql
 cd ../shop-graphql
-#cp -r ../graphql-base/vendor/oxid-esales/oxideshop-ce/* ./ # TODO: Use `cp -r $TRAVIS_BUILD_DIR/vendor/oxid-esales/oxideshop-ce/* ./`
 cp -r $TRAVIS_BUILD_DIR/vendor/oxid-esales/oxideshop-ce/* ./
 composer update $DEFAULT_COMPOSER_FLAGS
 
@@ -17,16 +13,10 @@ composer require codeception/module-phpbrowser codeception/c3 --dev
 
 #sed -i 's/<?php/<?php\n\nrequire(__DIR__ . "\/..\/c3.php");/' source/bootstrap.php
 
-mkdir source/modules/oe/graphql-base/tests
-cp -r ../graphql-base-module/tests/* source/modules/oe/graphql-base/tests/
-cp ../graphql-base-module/source/config.inc.php source/config.inc.php
+cp ./source/config.inc.php.dist ./source/config.inc.php
 
 composer require codeception/module-rest --dev
 composer require codeception/module-phpbrowser --dev
-
-# prepare shop
-mkdir -p source/tmp/
-mkdir -p var/configuration
 
 # prepare configuration
 
@@ -44,7 +34,7 @@ sudo sed -e 's|utf8_unicode_ci|latin1_general_ci|g; s|utf8|latin1|g' --in-place 
 sudo service mysql restart
 
 # start php built-in webserver
-php -S 127.0.0.1:8080 -t ./ &
+php -S 127.0.0.1:8080 -t ./source &
 
 # wait for it ;-)
 sleep 2;
@@ -60,10 +50,11 @@ bin/oe-console oe:module:install-configuration source/modules/oe/graphql-base/
 bin/oe-console oe:module:activate oe_graphql_base
 echo '---------end install config---------'
 
-sudo chmod +775 c3.php
+#sudo chmod +775 c3.php
 
 # Try to run tests and then coverage
-vendor/bin/codecept -c source/modules/oe/graphql-base/tests/ run
+vendor/bin/codecept -c vendor/oxid-esales/graphql-base/tests/ run
+
 # vendor/bin/codecept -c source/modules/oe/graphql-base/tests/ run --coverage --coverage-html
 # vendor/bin/runtests-codeception
 
