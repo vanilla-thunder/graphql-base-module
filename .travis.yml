@@ -25,9 +25,6 @@ env:
   global:
     - DEFAULT_COMPOSER_FLAGS="--no-interaction --no-ansi --no-progress --no-suggest --prefer-dist"
 
-before_script:
-    - nohup bash -c "php -S 127.0.0.1:8080 2>&1 -t app &" && sleep 1; cat nohup.out
-
 before_install:
     - composer self-update --1
 

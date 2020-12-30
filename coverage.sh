@@ -43,6 +43,12 @@ sed -i "s|blSkipViewUsage = false|blSkipViewUsage = true|" source/config.inc.php
 sudo sed -e 's|utf8_unicode_ci|latin1_general_ci|g; s|utf8|latin1|g' --in-place /etc/mysql/my.cnf
 sudo service mysql restart
 
+# start php built-in webserver
+php -S 127.0.0.1:8080 -t ./ &
+
+# wait for it ;-)
+sleep 2;
+
 vendor/bin/reset-shop
 composer clearcache
 composer update
@@ -57,7 +63,7 @@ echo '---------end install config---------'
 sudo chmod +775 c3.php
 
 # Try to run tests and then coverage
-SHOP_URL="http://127.0.0.1:8080" vendor/bin/codecept -c source/modules/oe/graphql-base/tests/ run
+vendor/bin/codecept -c source/modules/oe/graphql-base/tests/ run
 # vendor/bin/codecept -c source/modules/oe/graphql-base/tests/ run --coverage --coverage-html
 # vendor/bin/runtests-codeception
 
