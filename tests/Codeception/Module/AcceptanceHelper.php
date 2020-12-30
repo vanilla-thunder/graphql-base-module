@@ -43,7 +43,7 @@ class AcceptanceHelper extends Module implements DependsOnModule
     public function sendGQLQuery(string $query, ?array $variables = null, int $language = 0, int $shopId = 1): void
     {
         $this->rest->haveHTTPHeader('Content-Type', 'application/json');
-        $this->rest->sendPOST('/graphql?lang=' . $language . '&shp=' . $shopId, [
+        $this->rest->sendPOST('/widget.php?cl=graphql&lang=' . $language . '&shp=' . $shopId, [
             'query'     => $query,
             'variables' => $variables,
         ]);
