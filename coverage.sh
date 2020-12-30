@@ -62,6 +62,8 @@ echo '---------end install config---------'
 
 sudo chmod +775 c3.php
 
+SHOP_URL="http://127.0.0.1:8080"
+
 # Try to run tests and then coverage
 vendor/bin/codecept -c source/modules/oe/graphql-base/tests/ run
 # vendor/bin/codecept -c source/modules/oe/graphql-base/tests/ run --coverage --coverage-html
