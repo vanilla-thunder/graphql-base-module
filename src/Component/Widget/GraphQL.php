@@ -52,7 +52,6 @@ class GraphQL extends WidgetController
             $header->setHeader('HTTP/1.1 204 No Content');
             $header->setHeader('Access-Control-Allow-Methods: POST, GET, OPTIONS');
             $header->setHeader('Access-Control-Allow-Headers: Content-Type, Authorization');
-            $header->setHeader('Access-Control-Allow-Origin: *');
             $header->sendHeader();
 
             exit;

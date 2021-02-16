@@ -33,7 +33,6 @@ class ResponseWriter
     {
         $this->cleanHeaders();
 
-        header('Access-Control-Allow-Origin: *', true, $httpStatus);
         header('Content-Type: application/json', true, $httpStatus);
         header($this->generateServerTimingHeader(), true, $httpStatus);
 
