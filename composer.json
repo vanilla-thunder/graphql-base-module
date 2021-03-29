@@ -14,20 +14,20 @@
         }
     },
     "require": {
-        "php": "^7.1",
+        "php": "^7.1 || ^8.0",
         "ext-json": "*",
-        "thecodingmachine/graphqlite": "^3.1.2",
-        "lcobucci/jwt": "^3.4.1",
+        "hkreuter/graphqlite": "dev-3.1-php8-OXDEV-4506",
+        "lcobucci/jwt": "^3.4.1 | 4.1.4",
         "symfony/cache": "^4.3.0"
     },
     "require-dev": {
         "phpunit/phpunit": "^7.5.20|^8.5|^9",
         "php-parallel-lint/php-parallel-lint": "^1.1",
         "phpstan/phpstan": "^0.12.26",
-        "oxid-esales/oxideshop-ce": "6.5",
+        "oxid-esales/oxideshop-ce": "dev-b-6.3.x",
         "friendsofphp/php-cs-fixer": "^2.18.2",
-        "oxid-esales/oxideshop-unified-namespace-generator": "^v2.0",
-        "infection/infection": "^0.13.0|^0.14.0|^0.15.0"
+        "oxid-esales/oxideshop-unified-namespace-generator": "^v2.0 | dev-b-6.3.x",
+        "infection/infection": "^0.13.0|^0.14.0|^0.15.0|^0.21.0"
     },
     "autoload": {
         "psr-4": {
@@ -35,8 +35,7 @@
             "OxidEsales\\GraphQL\\Base\\Tests\\": "tests"
         }
     },
-    "prefer-stable": true,
-    "prefer-dist": true,
+    "minimum-stability": "dev",
     "scripts": {
         "fix:fixer": "php-cs-fixer fix",
         "fix": [
@@ -54,5 +53,11 @@
             "@test:unit",
             "@test:infection"
         ]
+    },
+    "repositories": {
+        "hkreuter/graphqlite": {
+            "type": "vcs",
+            "url": "https://github.com/hkreuter/graphqlite"
+        }
     }
 }
