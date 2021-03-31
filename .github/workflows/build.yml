@@ -49,6 +49,9 @@ jobs:
             - name: Install dependencies
               run: composer update $DEFAULT_COMPOSER_FLAGS $DEPENDENCIES
 
+            - name: Generated Unified Namespace
+              run: ./vendor/bin/oe-eshop-unified_namespace_generator
+
             - name: Test syntax
               run: composer test:syntax
 
