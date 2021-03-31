@@ -40,7 +40,7 @@ class Authentication implements AuthenticationServiceInterface
     /** @var LegacyService */
     private $legacyService;
 
-    /** @var ?Token */
+    /** @var Token */
     private $token;
 
     /** @var EventDispatcherInterface */
@@ -63,10 +63,6 @@ class Authentication implements AuthenticationServiceInterface
      */
     public function isLogged(): bool
     {
-        if ($this->token === null) {
-            return false;
-        }
-
         if ($this->token instanceof NullToken) {
             return false;
         }
@@ -121,7 +117,7 @@ class Authentication implements AuthenticationServiceInterface
      */
     public function getUserName(): string
     {
-        if (!$this->isLogged() || !$this->token) {
+        if (!$this->isLogged()) {
             throw new InvalidToken('The token is invalid');
         }
 
@@ -133,7 +129,7 @@ class Authentication implements AuthenticationServiceInterface
      */
     public function getUserId(): string
     {
-        if ($this->token instanceof NullToken || !$this->token) {
+        if ($this->token instanceof NullToken) {
             throw new InvalidToken('The token is invalid');
         }
 
@@ -145,7 +141,7 @@ class Authentication implements AuthenticationServiceInterface
      */
     public function isUserAnonymous(): bool
     {
-        if ($this->token instanceof NullToken || !$this->token) {
+        if ($this->token instanceof NullToken) {
             throw new InvalidToken('The token is invalid');
         }
 
