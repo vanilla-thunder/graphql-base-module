@@ -23,9 +23,6 @@ use OxidEsales\GraphQL\Base\Framework\AnonymousUserData;
 use OxidEsales\GraphQL\Base\Framework\UserData;
 use OxidEsales\GraphQL\Base\Framework\UserDataInterface;
 
-/**
- * @codeCoverageIgnore - Remove when integration tests are added to the coverage report
- */
 class Legacy
 {
     /** @var QueryBuilderFactoryInterface */

@@ -108,6 +108,8 @@ jobs:
                   docker-compose exec -T --user oxid php vendor/bin/codecept -c vendor/oxid-esales/graphql-base/tests/ run --coverage-xml
                   sed -i 's/\/var\/www\/oxideshop\/graphql-base-module\///' vendor/oxid-esales/graphql-base/tests/Codeception/_output/OxidEsales.GraphQL.Base.Tests.Codeception.acceptance.remote.coverage.xml
                   cp vendor/oxid-esales/graphql-base/tests/Codeception/_output/OxidEsales.GraphQL.Base.Tests.Codeception.acceptance.remote.coverage.xml $GITHUB_WORKSPACE/coverage.xml
+                  docker-compose exec -T --user oxid php /bin/bash -c "export TEST_DIRS=integration,Integration PARTIAL_MODULE_PATHS=oe/graphql-base ACTIVATE_ALL_MODULES=1 RUN_TESTS_FOR_MODULES=1 RUN_TESTS_FOR_SHOP=0 ADDITIONAL_TEST_PATHS=/var/www/oxideshop/vendor/oxid-esales/graphql-base/tests && vendor/bin/runtests --coverage-clover clover-integration.xml AllTestsUnit"
+                  cp vendor/oxid-esales/testing-library/clover-integration.xml $GITHUB_WORKSPACE/clover-integration.xml
 
             - name: SonarCloud Scan
               if: ${{ matrix.php != '7.1' && env.DEPENDENCIES == '' }}
