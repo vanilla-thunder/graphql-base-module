@@ -52,16 +52,6 @@
             "ignore": [
                 "OxidEsales\\GraphQL\\Base\\DataType\\PaginationFilter::addPaginationToQuery"
             ]
-        },
-        "Concat": {
-            "ignore": [
-                "OxidEsales\\GraphQL\\Base\\DataType\\*"
-            ]
-        },
-        "ConcatOperandRemoval": {
-            "ignore": [
-                "OxidEsales\\GraphQL\\Base\\DataType\\*"
-            ]
         }
     }
 }
